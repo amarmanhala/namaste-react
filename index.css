@@ -1,0 +1,113 @@
+:root {
+  --link-color: #3d4152;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  min-height: 80px;
+  padding: 0 260px;
+  box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
+}
+
+.logo {
+  background: url("./food.svg");
+  background-position: center;
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+}
+
+.nav-items > ul {
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.nav-items > ul > li {
+  margin: 10px;
+  color: var(--link-color);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01rem;
+}
+
+.card {
+  width: 254px;
+  cursor: pointer;
+  margin: 12px;  
+}
+
+.card-image-wrapper {
+  width: 254px;
+  height: 160px;
+  background: #eef0f5;
+  border-radius: 12px;
+}
+.card-image {
+  width: 100%;
+  height: 160px;
+  transition: opacity 0.3s ease-out;
+  position: relative;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+  object-fit: cover;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  margin-right: 6px;
+  font-size: 14px;
+  
+  letter-spacing: -0.04ch;
+}
+.card-title {
+  font-weight: 700;
+}
+.card-title-secondary {
+  color: var(--link-color);
+  font-weight: 500;
+  line-height: 28px;
+}
+.card-secondary-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rating {
+  padding: 8px;
+  background-color: #EEEEEE;
+  border-radius: 100%;
+  font-size: 11px;
+  font-weight: 500;
+
+}
+
+.search {
+  padding: 30px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
