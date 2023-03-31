@@ -5,7 +5,18 @@ import RestaurantCard from "./RestaurantCard";
 const Body = () => {
   return (
     <div className="body">
-      <div className="search">Search</div>
+      <div className="search-container">
+
+        <input
+          type="search"
+          className="search-input"
+          placeholder="Search anything..."
+          value=""
+          onChange={(e) => console.log(e.target.value)
+          }
+        />
+
+      </div>
       <div className="card-container">
         {restaurantData.map((eachRestaurant) => (
           <RestaurantCard
