@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { restaurantData } from "../config";
 import RestaurantCard from "./RestaurantCard";
 
 const Body = () => {
+  const [searchText, setSearchText] = useState("KFC");
   return (
     <div className="body">
       <div className="search-container">
@@ -11,8 +12,8 @@ const Body = () => {
           type="search"
           className="search-input"
           placeholder="Search anything..."
-          value=""
-          onChange={(e) => console.log(e.target.value)
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)
           }
         />
 
