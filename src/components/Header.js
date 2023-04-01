@@ -20,6 +20,8 @@ export default function Header() {
           <li>Cart</li>
         </ul>
       </div>
+      <button>Login</button>
+      <button>Sign in</button>
     </header>
   );
 }

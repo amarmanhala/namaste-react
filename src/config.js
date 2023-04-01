@@ -2,7 +2,7 @@
 export const IMAGE_CDN_URL =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/";
 
-  export const RESTAURANT_DATA = [
+export const RESTAURANT_DATA = [
     {
       type: "restaurant",
       data: {
