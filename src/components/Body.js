@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { restaurantData } from "../config";
+import { RESTAURANT_DATA } from "../config";
 import RestaurantCard from "./RestaurantCard";
 
 function filterRestaurantData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) =>
     restaurant.data.name.includes(searchText.trim())
   );
-
   return filteredData;
 }
 
 const Body = () => {
-  const [restaurants, setRestaurants] = useState(restaurantData);
+  const [restaurants, setRestaurants] = useState(RESTAURANT_DATA);
   const [searchText, setSearchText] = useState("");
 
-  const handleSearch = (value) => {};
+  
 
   return (
     <div className="body">
@@ -31,7 +30,6 @@ const Body = () => {
         <button
           onClick={() => {
             const data = filterRestaurantData(searchText, restaurants);
-
             setRestaurants(data);
           }}
         >
