@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
@@ -14,9 +15,9 @@ export default function Header() {
       <Logo />
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact us</li>
+          <Link to="/"><li>Home</li></Link>
+          <Link to="/about"><li>About us</li></Link>
+          <Link to="/contact"><li>Contact us</li></Link>
           <li>Cart</li>
         </ul>
       </div>
