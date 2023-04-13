@@ -9,6 +9,7 @@ import About from "./About";
 import ErrorPage from "./components/ErrorPage";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Profile from "./components/Profile";
 
 const AppLayout = () => {
   return (
@@ -34,6 +35,12 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        children: [
+          {
+            path: "profile", // It will create path like this - If you put / then react will consider localhost://profile
+            element: <Profile />,
+          },
+        ],
       },
       {
         path: "/contact",
@@ -41,8 +48,8 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:id",
-        element: <RestaurantMenu />
-      }
+        element: <RestaurantMenu />,
+      },
     ],
   },
 ]);

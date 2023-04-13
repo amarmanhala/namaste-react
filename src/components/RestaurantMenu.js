@@ -31,9 +31,9 @@ const RestaurantMenu = () => {
       <h3>{restaurantDetail.data?.cards[0].card?.card?.info?.totalRatings}</h3>
       <div><h1>Menu List</h1>
       <ul>
-      {restaurantDetail.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card.card.itemCards.map(menu => {
-        console.log(menu.card.info)
-       return (<li>{menu.card.info.name}</li>)
+      {restaurantDetail.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(menu => {
+        console.log(menu?.card?.info)
+       return (<li>{menu?.card?.info?.name}</li>)
         
       })}
         </ul>

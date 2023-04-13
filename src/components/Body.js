@@ -69,7 +69,7 @@ const Body = () => {
       
      
       {filteredRestaurants?.map((eachRestaurant) => (
-       <Link to={"/restaurant/" + eachRestaurant.data.id} key={eachRestaurant.data.id}>
+       <Link to={"/restaurant/" + eachRestaurant?.data?.id} key={eachRestaurant?.data?.id}>
         <RestaurantCard
           key={eachRestaurant.data.id}
           restaurantData={eachRestaurant}
