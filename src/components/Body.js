@@ -25,7 +25,7 @@ const Body = () => {
   //Call to swiggy api
   const getRestaurandData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7333148&lng=76.7794179&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     console.log(json);
