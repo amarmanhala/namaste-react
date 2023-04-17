@@ -1,5 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  HeaderNavigation,
+  ALIGN,
+  StyledNavigationList,
+  StyledNavigationItem,
+} from "baseui/header-navigation";
+import { StyledLink } from "baseui/link";
+import { Button } from "baseui/button";
+import { NavigationItem } from "baseui/header-navigation/styled-components";
+import { Input } from "baseui/input";
+
 
 const Logo = () => {
   return (
@@ -11,37 +22,38 @@ const Logo = () => {
 
 export default function Header() {
   return (
-    <header className="w-full h-[100px] px-14 flex flex-row justify-between items-center">
-      <Logo />
-      
-        <ul className="flex flex-row">
-        <Link to="/" className="ml-4">
-            <li>Home</li>
-          </Link>
-          <Link to="/cart" className="ml-4">
-            <li>
-              <button className="bg-black text-white px-4 py-2">Card</button>
-            </li>
-          </Link>
-          <Link to="/login" className="ml-4">
-            <li>Login</li>
-          </Link>
-          <Link to="/signup" className="ml-4">
-            <li>Sign Up</li>
+    <>
+      <HeaderNavigation>
+        <StyledNavigationList $align={ALIGN.left}>
+          <StyledNavigationItem><Logo /></StyledNavigationItem>
+        </StyledNavigationList>
+
+        <StyledNavigationList $align={ALIGN.center}>
+          <NavigationItem>
+           <Input type="search" placeholder="Search anything..." clearable clearOnEscape></Input>
+          </NavigationItem>
+        </StyledNavigationList>
+        <StyledNavigationList $align={ALIGN.right}>
+          <StyledNavigationItem>
+            <Link className="link" to="/">
+              Home
             </Link>
-          <Link to="/about" className="ml-4">
-            <li>About us</li>
-          </Link>
-          <Link to="/contact" className="ml-4">
-            <li>Contact us</li>
-          </Link>
-          <Link to="/instamart" className="ml-4">
-            <li>Instamart</li>
-          </Link>
-         
-         
-        </ul>
-      
-    </header>
+          </StyledNavigationItem>
+          <StyledNavigationItem>
+            <Link className="link" to="/about">
+              About
+            </Link>
+          </StyledNavigationItem>
+          <StyledNavigationItem>
+            <Link className="link" to="/contact">
+              Contact
+            </Link>
+          </StyledNavigationItem>
+          <StyledNavigationItem>
+            <Button>Cart</Button>
+          </StyledNavigationItem>
+        </StyledNavigationList>
+      </HeaderNavigation>
+    </>
   );
 }

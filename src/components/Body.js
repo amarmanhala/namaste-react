@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useIsOnline from "../../utils/useIsOnline";
+import { Button } from "baseui/button";
 
 function filterRestaurantData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) =>
@@ -61,15 +62,15 @@ const Body = () => {
           setSearchText(e.target.value);
         }}
       />
-      <button
+      <Button
         onClick={() => {
           const data = filterRestaurantData(searchText, allRestaurants);
           setFilteredRestaurants(data);
         }}
-        className="bg-slate-400 text-blue-700"
+        
       >
         Search
-      </button>
+      </Button>
     </div>
 
     <div className="card-container">

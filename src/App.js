@@ -1,5 +1,8 @@
 import React, { Children, Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
+import { Client as Styletron } from "styletron-engine-atomic";
+import { Provider as StyletronProvider } from "styletron-react";
+import { LightTheme, BaseProvider, DarkTheme } from "baseui";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
@@ -11,15 +14,21 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 //import Instamart from "./components/Instamart";
 
-//const Instamart = lazy(() => import("./components/Instamart")); 
+//const Instamart = lazy(() => import("./components/Instamart"));
+
+const engine = new Styletron();
 
 const AppLayout = () => {
   return (
     <>
-      <Header />
-      {/** All the children will go into j the Outlet according to the path  */}
-      <Outlet />
-      <Footer />
+      <StyletronProvider value={engine}>
+        <BaseProvider theme={LightTheme}>
+          <Header />
+          {/** All the children will go into j the Outlet according to the path  */}
+          <Outlet />
+          <Footer />
+        </BaseProvider>
+      </StyletronProvider>
     </>
   );
 };
@@ -44,7 +53,7 @@ const appRouter = createBrowserRouter([
           },
         ],
       },
-    
+
       {
         path: "/contact",
         element: <Contact />,
