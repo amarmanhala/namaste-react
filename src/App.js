@@ -1,6 +1,5 @@
 import React, { Children, Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
-import "../index.css";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
@@ -12,13 +11,13 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 //import Instamart from "./components/Instamart";
 
-const Instamart = lazy(() => import("./components/Instamart")); 
+//const Instamart = lazy(() => import("./components/Instamart")); 
 
 const AppLayout = () => {
   return (
     <>
       <Header />
-      {/** All the children will go into the Outlet according to the path  */}
+      {/** All the children will go into j the Outlet according to the path  */}
       <Outlet />
       <Footer />
     </>
@@ -45,10 +44,7 @@ const appRouter = createBrowserRouter([
           },
         ],
       },
-      {
-        path: "/instamart",
-        element: <Suspense><Instamart /></Suspense>,
-      },
+    
       {
         path: "/contact",
         element: <Contact />,

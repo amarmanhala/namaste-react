@@ -66,6 +66,7 @@ const Body = () => {
           const data = filterRestaurantData(searchText, allRestaurants);
           setFilteredRestaurants(data);
         }}
+        className="bg-slate-400 text-blue-700"
       >
         Search
       </button>
