@@ -4,6 +4,13 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useIsOnline from "../../utils/useIsOnline";
 import { Button } from "baseui/button";
+import { Input } from "baseui/input";
+import {FlexGrid, FlexGridItem} from 'baseui/flex-grid';
+import {useStyletron} from 'baseui';
+import { Search } from "baseui/icon";
+
+
+
 
 function filterRestaurantData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) =>
@@ -18,6 +25,7 @@ const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [css, theme] = useStyletron();
 
   useEffect(() => {
     getRestaurandData();
@@ -52,17 +60,27 @@ const Body = () => {
 
   return (
     <div className="body">
-    <div className="search-container">
-      <input
-        type="search"
-        className="search-input"
-        placeholder="Search anything..."
+    <div className={css({ display: "flex", flexDirection: "row", padding: "20px 28px" })}>
+     
+
+<div className={css({ width: "300px", marginRight: "12px" })}>
+<Input
+        
+        placeholder="Search Restaurants"
         value={searchText}
         onChange={(e) => {
           setSearchText(e.target.value);
         }}
+        className={css({ width: "100%" })}
+        clearOnEscape
+        clearable
+        startEnhancer={<Search size={24} />}
+      
+        
       />
-      <Button
+</div>
+   
+       <Button
         onClick={() => {
           const data = filterRestaurantData(searchText, allRestaurants);
           setFilteredRestaurants(data);
@@ -71,6 +89,11 @@ const Body = () => {
       >
         Search
       </Button>
+
+
+     
+      
+     
     </div>
 
     <div className="card-container">

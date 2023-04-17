@@ -9,9 +9,7 @@ import {
 import { StyledLink } from "baseui/link";
 import { Button } from "baseui/button";
 import { NavigationItem } from "baseui/header-navigation/styled-components";
-import { Input } from "baseui/input";
 
-import { Search } from "baseui/icon";
 
 
 const Logo = () => {
@@ -31,8 +29,8 @@ export default function Header() {
         </StyledNavigationList>
 
         <StyledNavigationList $align={ALIGN.center}>
-          <NavigationItem style={{width: '400px'}}>
-           <Input placeholder="Search anything..." startEnhancer={<Search size={26} />} clearable={true} clearOnEscape={true}></Input>
+          <NavigationItem>
+          
           </NavigationItem>
          
         </StyledNavigationList>

@@ -8,3 +8,7 @@
 .link {
   color: black;
 }
+.search-container {
+  display: flex;
+  flex-direction: row;
+}
