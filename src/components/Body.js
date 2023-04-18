@@ -33,9 +33,12 @@ const Body = () => {
   }
   //not render anything
   if (!allRestaurants) return null;
+console.log("This is an obj", filteredData);
 
-  return (
+
+  return  filteredData.length === 0 ?  (<Shimmer />) : (
     <div className="body">
+      
       <div
         className={css({
           display: "flex",
