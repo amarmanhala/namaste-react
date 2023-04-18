@@ -20,6 +20,7 @@ import {
   LabelSmall,
   LabelXSmall,
 } from 'baseui/typography';
+import {Tag, VARIANT, SIZE} from 'baseui/tag';
 
 const RestaurantMenu = () => {
 
@@ -32,11 +33,7 @@ const RestaurantMenu = () => {
 
   return (
     <div className="container-restaurant-menu">
-      <div>
-      <DisplayXSmall>{restaurantDetail?.data?.cards[0].card?.card?.info?.name}</DisplayXSmall>
-      <ParagraphLarge>
-        {restaurantDetail?.data?.cards[0].card?.card?.info?.avgRatingString} ratings - {restaurantDetail?.data?.cards[0].card?.card?.info?.availability?.opened === true ? (<HintDot color={COLOR.positive}>Open</HintDot>) : (<HintDot color={COLOR.negative}>Closed</HintDot>)}</ParagraphLarge>
-      </div>
+     
      
       <img
         src={
