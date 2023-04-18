@@ -10,34 +10,21 @@ import { Search } from "baseui/icon";
 import { Block } from "baseui/block";
 import useRestaurants from "../../utils/useRestaurants";
 
-function filterRestaurantData(searchText, restaurants) {
-  const filteredData = restaurants.filter((restaurant) =>
+
+const Body = () => {
+  const allRestaurants = useRestaurants();
+  const [searchText, setSearchText] = useState("");
+  const [css, theme] = useStyletron();
+
+  const handleSearchChange = (event) => {
+    setSearchText(event.target.value);
+  };
+
+  const filteredData = allRestaurants.filter((restaurant) =>
     restaurant?.data?.name
       ?.toLowerCase()
       ?.includes(searchText.trim().toLowerCase())
   );
-  return filteredData;
-}
-
-const Body = () => {
-  //const [allRestaurants, setAllRestaurants] = useState([]);
- const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  const [searchText, setSearchText] = useState("");
-  const [css, theme] = useStyletron();
-  const allRestaurants = useRestaurants();
-
-  useEffect(() => {
-    //const data = useRestaurants();
-    //console.log(data)
-   // getRestaurandData();
-   setFilteredRestaurants(allRestaurants);
-   console.log("This is filtered" + filterRestaurantData);
-  }, []);
-
-
-  //const filteredRestaurants = useRestaurants();
-
-  
 
   const isOnline = useIsOnline();
 
@@ -60,28 +47,17 @@ const Body = () => {
           <Input
             placeholder="Search Restaurants"
             value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
+            onChange={handleSearchChange}
             className={css({ width: "100%" })}
             clearOnEscape
             clearable
             startEnhancer={<Search size={24} />}
           />
         </Block>
-
-        <Button
-          onClick={() => {
-            const data = filterRestaurantData(searchText, allRestaurants);
-            setFilteredRestaurants(data);
-          }}
-        >
-          Search
-        </Button>
       </div>
 
       <div className="card-container">
-        {filteredRestaurants?.map((eachRestaurant) => (
+        {filteredData?.map((eachRestaurant) => (
           <Link
             to={"/restaurant/" + eachRestaurant?.data?.id}
             key={eachRestaurant?.data?.id}
