@@ -7,18 +7,13 @@ const Shimmer = () => {
   return (
     <>
 
-      <Grid gridColumns={4}
-        gridGaps={[6, 6, 12]}
-        gridGutters={[6, 6, 12]}
-        gridMargins={[8, 16, 32]}
-        gridMaxWidth={"100%"}>
-      {Array(5).fill(null).map((index) => {
-        return <Cell span={[3, 2, 3, 4]}><Skeleton height="200px" width="400px" animation key={index} /></Cell>
+     <div className="card-container"> 
+     {Array(5).fill(null).map((index) => {
+        return <Skeleton height="200px" width="322px" animation key={index} />
       })}
-      </Grid>
+      </div>
     
-
-
+     
      
     </>
   );
