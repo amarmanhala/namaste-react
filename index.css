@@ -1,9 +1,12 @@
+a {
+  text-decoration: none;
+}
 .logo {
   background: url("./food.svg");
   background-position: center;
   background-size: cover;
   height: 40px;
-  width: 40px;  
+  width: 40px;
 }
 .link {
   color: black;
@@ -11,4 +14,11 @@
 .search-container {
   display: flex;
   flex-direction: row;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 1360px;
+  margin: 18px auto;
 }

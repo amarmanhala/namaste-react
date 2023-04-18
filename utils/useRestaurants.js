@@ -9,11 +9,15 @@ const useRestaurants = () => {
   }, []);
 
   const getRestaurandData = async () => {
-    const data = await fetch(RESTAURANTS);
-    const json = await data.json();
-
-    //use optional chaining
+    try {
+      const data = await fetch(RESTAURANTS);
+      const json = await data.json();
+      //use optional chaining
     setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    }
+    catch(error) {
+      console.log(error)
+    }
   };
 
   return restaurants;
