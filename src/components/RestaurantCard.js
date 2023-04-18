@@ -2,22 +2,11 @@ import React from "react";
 import { Card, StyledBody, StyledAction } from "baseui/card";
 import { IMAGE_CDN_URL } from "../config";
 import { useStyletron } from "baseui";
-import { createTheme } from "baseui";
-import {
-  HeadingXXLarge,
-  HeadingXLarge,
-  HeadingLarge,
-  HeadingMedium,
-  HeadingSmall,
-  HeadingXSmall,
-} from "baseui/typography";
-import { Heading } from "baseui/heading";
+import { Badge, SHAPE, COLOR } from "baseui/badge";
+
+import { MessageCard, BUTTON_KIND } from "baseui/message-card";
 
 
-import {
-  MessageCard,
-  BUTTON_KIND
-} from "baseui/message-card";
 
 const RestaurantCard = (props) => {
   const { restaurantData } = props;
@@ -29,24 +18,22 @@ const RestaurantCard = (props) => {
     costForTwo,
     deliveryTime,
   } = restaurantData?.data;
-  const [css] = useStyletron();
 
   return (
     <>
-     
-
-
       <MessageCard
-      heading={name}
-      
-      onClick={() => alert("click")}
-      
-      paragraph={deliveryTime}
-      image={{
-        src:
-        IMAGE_CDN_URL + cloudinaryImageId
-      }}
-    />
+        heading={name}
+        onClick={() => alert("click")}
+        paragraph={
+          <div style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-between", alignItems: "center" }}>
+    <p>Delivery time - {deliveryTime} min</p>
+ <Badge content={avgRating} shape={SHAPE.pill} color={COLOR.primary} />
+  </div>
+        }
+        image={{
+          src: IMAGE_CDN_URL + cloudinaryImageId,
+        }}
+      />
     </>
   );
 };
