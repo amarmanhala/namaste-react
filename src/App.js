@@ -1,4 +1,4 @@
-import React, { Children, Suspense, lazy } from "react";
+import React, { Children, Suspense, lazy, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Client as Styletron } from "styletron-engine-atomic";
 import { Provider as StyletronProvider } from "styletron-react";
@@ -12,6 +12,7 @@ import ErrorPage from "./components/ErrorPage";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
+import UserContext from "../utils/UserContext";
 //import Instamart from "./components/Instamart";
 
 //const Instamart = lazy(() => import("./components/Instamart"));
@@ -19,14 +20,24 @@ import Profile from "./components/Profile";
 const engine = new Styletron();
 
 const AppLayout = () => {
+
+  const [user, setUser] = useState({
+    
+      name: "Singh",
+      age: 22,
+    
+  })
   return (
     <>
       <StyletronProvider value={engine}>
         <BaseProvider theme={LightTheme}>
-          <Header />
+        <UserContext.Provider value={user}>
+        <Header />
           {/** All the children will go into j the Outlet according to the paths  */}
           <Outlet />
           <Footer />
+        </UserContext.Provider>
+        
         </BaseProvider>
       </StyletronProvider>
     </>

@@ -16,13 +16,15 @@ import {
   LabelSmall,
   LabelXSmall,
 } from "baseui/typography";
+import {StyledDivider, SIZE} from 'baseui/divider';
+
 
 const RestaurantHeader = (props) => {
-  //console.log(props.data);
+  
   const { name, cuisines, avgRatingString, availability, feeDetails } =
     props.data;
   return (
-    <div>
+    <div style={{ paddingTop: "50px" }}>
       <DisplayXSmall>{name}</DisplayXSmall>
       <ParagraphMedium>{cuisines.map(String).join(", ")}</ParagraphMedium>
       <div
@@ -44,6 +46,7 @@ const RestaurantHeader = (props) => {
         </ParagraphLarge>
         <ParagraphSmall>{feeDetails.message}</ParagraphSmall>
       </div>
+      <StyledDivider $size={SIZE.section} />
     </div>
   );
 };

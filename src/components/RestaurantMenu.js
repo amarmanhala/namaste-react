@@ -23,6 +23,7 @@ import {
 import {Tag, VARIANT, SIZE} from 'baseui/tag';
 import RestaurantHeader from "./RestaurantHeader";
 import Shimmer from "./Shimmer";
+import MenuItemCard from "./MenuItemCard";
 
 const RestaurantMenu = () => {
 
@@ -84,6 +85,7 @@ async function test() {
      
       <div>
         <h1>Menu</h1>
+       
         <ul>
       
 
@@ -96,8 +98,8 @@ async function test() {
   return <>
   <h1>{each?.title}</h1>
   { each?.itemCards.map(j => {
-    //console.log(j.card.info);
-    return <p>{j?.card?.info?.name}</p>
+    console.log(j.card.info);
+    return  <MenuItemCard {...j.card.info} />
     
   }) }
  
