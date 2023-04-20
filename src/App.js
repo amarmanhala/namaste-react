@@ -24,7 +24,7 @@ const AppLayout = () => {
       <StyletronProvider value={engine}>
         <BaseProvider theme={LightTheme}>
           <Header />
-          {/** All the children will go into j the Outlet according to the path  */}
+          {/** All the children will go into j the Outlet according to the paths  */}
           <Outlet />
           <Footer />
         </BaseProvider>
