@@ -1,14 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
-import {
-  DisplayLarge,
-  DisplayMedium,
-  DisplaySmall,
-  DisplayXSmall,
-  HeadingMedium,
-  HeadingXSmall,
-} from "baseui/typography";
+import { HeadingMedium } from "baseui/typography";
 import RestaurantHeader from "./RestaurantHeader";
 import Shimmer from "./Shimmer";
 import MenuItemCard from "./MenuItemCard";
@@ -19,7 +12,7 @@ const RestaurantMenu = () => {
 
   const restaurantDetail = useRestaurantMenu(id);
 
-  const arr = [];
+  const MenuArray = [];
 
   getRestaurantData();
 
@@ -46,7 +39,7 @@ const RestaurantMenu = () => {
         restaurantDetail?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map(
           (eachCard) => {
             if (getMenuItems(eachCard?.card) !== undefined) {
-              arr.push(getMenuItems(eachCard?.card));
+              MenuArray.push(getMenuItems(eachCard?.card));
             }
           }
         );
@@ -65,14 +58,14 @@ const RestaurantMenu = () => {
       />
 
       <div>
-        {arr.map((each) => {
+        {MenuArray.map((each) => {
           //console.log(each?.itemCards);
           return (
             <>
               <HeadingMedium>{each?.title}</HeadingMedium>
-              {each?.itemCards.map((j) => {
-                console.log(j.card.info);
-                return <MenuItemCard {...j.card.info} />;
+              {each?.itemCards.map((itemCard) => {
+                console.log(itemCard?.card?.info);
+                return <MenuItemCard {...itemCard?.card?.info} />;
               })}
             </>
           );
