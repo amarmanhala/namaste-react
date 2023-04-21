@@ -58,14 +58,20 @@ const RestaurantMenu = () => {
       />
 
       <div>
-        {MenuArray.map((each) => {
-          //console.log(each?.itemCards);
+        {MenuArray.map((each, index) => {
+          //  console.log(each);
           return (
             <>
-              <HeadingMedium>{each?.title}</HeadingMedium>
+              <HeadingMedium key={index}>{each?.title}</HeadingMedium>
+
               {each?.itemCards.map((itemCard) => {
-                console.log(itemCard?.card?.info);
-                return <MenuItemCard {...itemCard?.card?.info} />;
+                // console.log(itemCard?.card?.info);
+                return (
+                  <MenuItemCard
+                    key={itemCard?.card?.info?.id}
+                    {...itemCard?.card?.info}
+                  />
+                );
               })}
             </>
           );

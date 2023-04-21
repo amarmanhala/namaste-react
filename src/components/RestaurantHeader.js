@@ -46,7 +46,8 @@ const RestaurantHeader = (props) => {
         </ParagraphLarge>
         <ParagraphSmall>{feeDetails.message}</ParagraphSmall>
       </div>
-      <StyledDivider $size={SIZE.section} />
+      <StyledDivider $size={SIZE.module} />
+
     </div>
   );
 };

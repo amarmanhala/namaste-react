@@ -27,6 +27,6 @@ a {
 .container-restaurant-menu {
   display: flex;
   flex-direction: column;
-  width: 1280px;
+  width: 920px;
   margin: 0 auto;
 }

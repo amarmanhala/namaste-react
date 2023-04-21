@@ -9,7 +9,7 @@ const CardContent = (props) => {
 }
 
 const MenuItemCard = ({ name, description, price, imageId, showImage }) => {
-  console.log(price);
+  
   return (
     <>
       <MessageCard
@@ -17,8 +17,8 @@ const MenuItemCard = ({ name, description, price, imageId, showImage }) => {
         paragraph={<CardContent description={description} price={price} />}
         buttonLabel="I want it"
         onClick={() => alert("Clicked 🙂")}
-        overrides={{ Root: { style: { border: "none" } } }}
-       
+        overrides={{ Root: { style: { borderWidth: 0 } } }}
+    
         image={{
           src: IMAGE_CDN_URL + imageId,
           backgroundPosition: 'center',
