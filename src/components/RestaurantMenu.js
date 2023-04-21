@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
 import { HeadingMedium } from "baseui/typography";
 import RestaurantHeader from "./RestaurantHeader";
-import Shimmer from "./Shimmer";
+import Shimmer, { ShimmerMenu } from "./Shimmer";
 import MenuItemCard from "./MenuItemCard";
 
 const RestaurantMenu = () => {
@@ -50,7 +50,7 @@ const RestaurantMenu = () => {
   }
 
   return restaurantDetail.length === 0 ? (
-    <Shimmer />
+    <ShimmerMenu />
   ) : (
     <div className="container-restaurant-menu">
       <RestaurantHeader

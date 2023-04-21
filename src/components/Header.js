@@ -7,10 +7,12 @@ import {
   StyledNavigationItem,
 } from "baseui/header-navigation";
 import { StyledLink } from "baseui/link";
-import { Button } from "baseui/button";
+import { Button, SHAPE } from "baseui/button";
 import { NavigationItem } from "baseui/header-navigation/styled-components";
 import {AppNavBar, setItemActive} from 'baseui/app-nav-bar';
 import getScreenSize from "../../utils/getScreenSize";
+import {NotificationCircle, COLOR} from 'baseui/badge';
+
 
 
 
@@ -64,7 +66,8 @@ console.log(getDevice);
             </Link>
           </StyledNavigationItem>
           <StyledNavigationItem>
-            <Button>Cart</Button>
+            <Button shape={SHAPE.pill}>Cart&nbsp;&nbsp;<NotificationCircle content={0} />
+</Button>
           </StyledNavigationItem>
         </StyledNavigationList>
       </HeaderNavigation>

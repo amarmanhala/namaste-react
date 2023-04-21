@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Skeleton } from "baseui/skeleton";
 
-const Shimmer = () => {
+export const Shimmer = () => {
   return (
     <>
       <Skeleton
@@ -33,4 +33,28 @@ const Shimmer = () => {
   );
 };
 
-export default Shimmer;
+export const ShimmerMenu = () => {
+  return (
+    <>
+        <div className="container-restaurant-menu">
+
+      <Skeleton
+        animation
+        rows={6}
+        width="100%"
+        overrides={{
+          Row: {
+            style: {
+              height: "150px",
+              marginBottom: "15px",
+              marginTop: "15px",
+            
+            },
+          },
+        }}
+      />
+</div>
+     
+    </>
+  );
+};

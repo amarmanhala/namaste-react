@@ -14,30 +14,30 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import UserContext from "../utils/UserContext";
 //import Instamart from "./components/Instamart";
+import { Provider } from "react-redux";
+import store from "../utils/store";
 
 //const Instamart = lazy(() => import("./components/Instamart"));
 
 const engine = new Styletron();
 
 const AppLayout = () => {
-
   const [user, setUser] = useState({
-    
-      name: "Singh",
-      age: 22,
-    
-  })
+    name: "Singh",
+    age: 22,
+  });
   return (
     <>
       <StyletronProvider value={engine}>
         <BaseProvider theme={LightTheme}>
-        <UserContext.Provider value={user}>
-        <Header />
-          {/** All the children will go into j the Outlet according to the paths  */}
-          <Outlet />
-          <Footer />
-        </UserContext.Provider>
-        
+          <Provider store={store}>
+            <UserContext.Provider value={user}>
+              <Header />
+              {/** All the children will go into j the Outlet according to the paths  */}
+              <Outlet />
+              <Footer />
+            </UserContext.Provider>
+          </Provider>
         </BaseProvider>
       </StyletronProvider>
     </>

@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 a {
   text-decoration: none;
 }
@@ -58,3 +62,13 @@ a {
     display: none;
   }
 }
+
+.footer {
+  width: 100%;
+  background-color: #000;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-link {}

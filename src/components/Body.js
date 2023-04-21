@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-import Shimmer from "./Shimmer";
+import {Shimmer} from "./Shimmer";  
 import { Link } from "react-router-dom";
 import useIsOnline from "../../utils/useIsOnline";
 import { Button } from "baseui/button";
