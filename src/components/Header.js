@@ -10,6 +10,7 @@ import { StyledLink } from "baseui/link";
 import { Button } from "baseui/button";
 import { NavigationItem } from "baseui/header-navigation/styled-components";
 import {AppNavBar, setItemActive} from 'baseui/app-nav-bar';
+import getScreenSize from "../../utils/getScreenSize";
 
 
 
@@ -23,6 +24,8 @@ const Logo = () => {
 
 export default function Header() {
 
+  const getDevice = getScreenSize();
+console.log(getDevice);
   return (
     <>
 
@@ -32,12 +35,18 @@ export default function Header() {
           <StyledNavigationItem><Logo /></StyledNavigationItem>
         </StyledNavigationList>
 
-        <StyledNavigationList $align={ALIGN.center}>
+        { getDevice === "desktop" ? (
+          <StyledNavigationList $align={ALIGN.center}>
           <NavigationItem>
-          
+          hjh
           </NavigationItem>
          
         </StyledNavigationList>
+        ) : null }
+        
+        
+
+       
         <StyledNavigationList $align={ALIGN.right}>
           <StyledNavigationItem>
             <Link className="link" to="/">
