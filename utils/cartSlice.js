@@ -10,10 +10,16 @@ const cartSlice = createSlice({
        state.items.push(action.payload);
        //Note: This function doest return anything.
     },
-    clearItems: (state) => {
+    removeItem: (state, action) => {
+      state.items.pop();
+    },
+    clearAllItems: (state) => {
       state.items = [];
     }
   }
 })
 
-export default cartSlice;
+// Exports actions
+const { addItem, removeItem, clearAllItems } = cartSlice.actions
+//reducer not reducers
+export default cartSlice.reducer
