@@ -24,9 +24,37 @@ a {
   margin: 18px auto;
 }
 
+@media (max-width: 767px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    width: 100%;
+    margin: 18px auto;
+  }
+}
+
 .container-restaurant-menu {
   display: flex;
   flex-direction: column;
   width: 920px;
   margin: 0 auto;
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
 }
