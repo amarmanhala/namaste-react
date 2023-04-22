@@ -11,7 +11,10 @@ const cartSlice = createSlice({
        //Note: This function doest return anything.
     },
     removeItem: (state, action) => {
-      state.items.pop();
+      const index = state.items.findIndex(item => item.id === action.payload); 
+      if (index !== -1) {
+        state.items.splice(index, 1); // Remove the object from the array
+      }
     },
     clearAllItems: (state) => {
       state.items = [];

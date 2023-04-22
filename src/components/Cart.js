@@ -1,10 +1,7 @@
-import { MessageCard, IMAGE_LAYOUT } from "baseui/message-card";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { IMAGE_CDN_URL } from "../config";
-import { ParagraphSmall, ParagraphMedium } from "baseui/typography";
 import { Button, KIND, SIZE, SHAPE } from "baseui/button";
-import { clearAllItems } from "../../utils/cartSlice";
+import { clearAllItems, removeItem } from "../../utils/cartSlice";
 import {
   DisplayLarge,
   DisplaySmall,
@@ -27,6 +24,10 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearAllItems());
   };
+  const handleRemoveItem = (id) => {
+    
+    dispatch(removeItem(id))
+  }
   return (
     <>
       <div className="container-restaurant-menu">
@@ -66,7 +67,7 @@ const Cart = () => {
                     <Check />
                   </Button>
                   <div style={{ width: "18px" }} />
-                  <Button shape="round" size="compact" kind="secondary">
+                  <Button shape="round" size="compact" kind="secondary" onClick={() => handleRemoveItem(item?.id)}>
                     <Delete />
                   </Button>
                 </>
