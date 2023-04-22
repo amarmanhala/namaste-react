@@ -7,6 +7,7 @@ import { addItem } from "../../utils/cartSlice";
 import { useDispatch } from "react-redux";
 
 const CardContent = (props) => {
+
   return (<><ParagraphSmall style={{ margin: 0 }}>{props.description}</ParagraphSmall><br></br><ParagraphMedium style={{ margin: 0 }}><i>&#8377; &nbsp;</i>{Number(props.price)/100}</ParagraphMedium></>)
 }
 
@@ -14,22 +15,26 @@ const MenuItemCard = (props) => {
 
   const dispatch = useDispatch();
 
+  
+
+  props.ItemData.restaurantName = props.restaurantName;
+
   const handleAddItem = (props) => {
-    console.log("Dispatched...")
+    console.log(props)
     dispatch(addItem(props));
   }
   
   return (
     <>
       <MessageCard
-        heading={props.name}
-        paragraph={<CardContent description={props.description} price={props.price} />}
+        heading={props.ItemData.name}
+        paragraph={<CardContent description={props.ItemData.description} price={props.ItemData.price} />}
         buttonLabel="I want it"
-        onClick={() => handleAddItem(props)}
+        onClick={() => handleAddItem(props.ItemData)}
         overrides={{ Root: { style: { borderWidth: 0 } } }}
     
         image={{
-          src: IMAGE_CDN_URL + props.imageId,
+          src: IMAGE_CDN_URL + props.ItemData.imageId,
           backgroundPosition: 'center',
           layout: IMAGE_LAYOUT.trailing,
           ariaLabel: 'A table with freshly prepared food',

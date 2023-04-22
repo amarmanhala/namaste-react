@@ -69,7 +69,8 @@ const RestaurantMenu = () => {
                 return (
                   <MenuItemCard
                     key={itemCard?.card?.info?.id}
-                    {...itemCard?.card?.info}
+                    ItemData={itemCard?.card?.info}
+                    restaurantName={restaurantDetail?.data?.cards[0]?.card?.card?.info?.name}
                   />
                 );
               })}

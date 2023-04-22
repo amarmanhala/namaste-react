@@ -1,5 +1,6 @@
 import React, { Children, Suspense, lazy, useState } from "react";
 import ReactDOM from "react-dom/client";
+import "../index.css";
 import { Client as Styletron } from "styletron-engine-atomic";
 import { Provider as StyletronProvider } from "styletron-react";
 import { LightTheme, BaseProvider, DarkTheme } from "baseui";
