@@ -12,6 +12,8 @@ import { NavigationItem } from "baseui/header-navigation/styled-components";
 import {AppNavBar, setItemActive} from 'baseui/app-nav-bar';
 import getScreenSize from "../../utils/getScreenSize";
 import {NotificationCircle, COLOR} from 'baseui/badge';
+import { useSelector } from "react-redux";
+
 
 
 
@@ -27,7 +29,11 @@ const Logo = () => {
 export default function Header() {
 
   const getDevice = getScreenSize();
-console.log(getDevice);
+
+  const cartItems = useSelector(store => store.cart.items);
+
+  console.log("Carts", cartItems);
+
   return (
     <>
 
@@ -66,8 +72,8 @@ console.log(getDevice);
             </Link>
           </StyledNavigationItem>
           <StyledNavigationItem>
-            <Button shape={SHAPE.pill}>Cart&nbsp;&nbsp;<NotificationCircle content={0} />
-</Button>
+           <Link to="/cart"> <Button shape={SHAPE.pill}>Cart&nbsp;&nbsp;<NotificationCircle content={cartItems.length} /></Button></Link>
+
           </StyledNavigationItem>
         </StyledNavigationList>
       </HeaderNavigation>
