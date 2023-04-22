@@ -30,7 +30,7 @@ export default function Header() {
 
   const getDevice = getScreenSize();
 
-  const cartItems = useSelector(store => store.cart.items);
+  const cartItems = useSelector(store => store.cart.items);  //Only get what you need, not get all all the store. It may cause the performance issues.
 
   console.log("Carts", cartItems);
 
