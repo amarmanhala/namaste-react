@@ -33,17 +33,17 @@ const Cart = () => {
 
   const getSubTotal = () => {
     let subTotal = 0;
-    cartItems.map(item => {
+    cartItems.map((item) => {
       subTotal = item.price + subTotal;
-    })
+    });
     return subTotal / 100;
-  }
+  };
 
   const getTotal = () => {
     let subTotal = getSubTotal();
     let total = subTotal + 40;
     return total;
-  }
+  };
 
   return (
     <>
@@ -80,9 +80,6 @@ const Cart = () => {
               key={item?.id}
               endEnhancer={() => (
                 <>
-                  <Button shape="round" size="compact" kind="secondary">
-                    <Check />
-                  </Button>
                   <div style={{ width: "18px" }} />
                   <Button
                     shape="round"
@@ -111,26 +108,46 @@ const Cart = () => {
         </div>
         <ul>
           <ListItem
-            endEnhancer={() => <ListItemLabel> <i>&#8377; &nbsp;</i>{getSubTotal()}</ListItemLabel>}
+            endEnhancer={() => (
+              <ListItemLabel>
+                {" "}
+                <i>&#8377; &nbsp;</i>
+                {getSubTotal()}
+              </ListItemLabel>
+            )}
           >
             <ListItemLabel>Subtotal</ListItemLabel>
           </ListItem>
 
           <ListItem
-            endEnhancer={() => <ListItemLabel><i>&#8377; &nbsp;</i>{40}</ListItemLabel>}
+            endEnhancer={() => (
+              <ListItemLabel>
+                <i>&#8377; &nbsp;</i>
+                {40}
+              </ListItemLabel>
+            )}
           >
             <ListItemLabel>Delivery Fee</ListItemLabel>
           </ListItem>
 
-         
-
           <ListItem
-            endEnhancer={() => <ListItemLabel><i>&#8377; &nbsp;</i>{getTotal(getSubTotal())}</ListItemLabel>}
+            endEnhancer={() => (
+              <ListItemLabel>
+                <i>&#8377; &nbsp;</i>
+                {getTotal(getSubTotal())}
+              </ListItemLabel>
+            )}
           >
-            <ListItemLabel><b>Total</b></ListItemLabel>
+            <ListItemLabel>
+              <b>Total</b>
+            </ListItemLabel>
           </ListItem>
-          
+
         </ul>
+        <div style={{ marginBottom: "60px", marginTop: "60px" }}>
+        <Button>Continue to payment</Button>
+        </div>
+        
       </div>
     </>
   );
