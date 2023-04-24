@@ -5,6 +5,12 @@ import { HeadingMedium } from "baseui/typography";
 import RestaurantHeader from "./RestaurantHeader";
 import Shimmer, { ShimmerMenu } from "./Shimmer";
 import MenuItemCard from "./MenuItemCard";
+import {
+  SnackbarProvider,
+  useSnackbar,
+  DURATION,
+} from 'baseui/snackbar';
+
 
 const RestaurantMenu = () => {
   // How to read dynamic params.
@@ -52,7 +58,8 @@ const RestaurantMenu = () => {
   return restaurantDetail.length === 0 ? (
     <ShimmerMenu />
   ) : (
-    <div className="container-restaurant-menu">
+    <SnackbarProvider>
+  <div className="container-restaurant-menu">
       <RestaurantHeader
         data={restaurantDetail?.data?.cards[0]?.card?.card?.info}
       />
@@ -79,6 +86,8 @@ const RestaurantMenu = () => {
         })}
       </div>
     </div>
+    </SnackbarProvider>
+  
   );
 };
 

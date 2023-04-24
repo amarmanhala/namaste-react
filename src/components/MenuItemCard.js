@@ -6,6 +6,7 @@ import { IMAGE_CDN_URL } from "../config";
 import { addItem } from "../../utils/cartSlice";
 import { useDispatch } from "react-redux";
 import { SnackbarProvider, useSnackbar, DURATION } from "baseui/snackbar";
+import Check from 'baseui/icon/check';
 
 const CardContent = (props) => {
   return (
@@ -22,12 +23,18 @@ const CardContent = (props) => {
 
 const MenuItemCard = (props) => {
   const dispatch = useDispatch();
+  const {enqueue} = useSnackbar();
+
 
   props.ItemData.restaurantName = props.restaurantName;
 
   const handleAddItem = (props) => {
     console.log(props);
     dispatch(addItem(props));
+    enqueue({
+      message: 'Added to cart',
+      startEnhancer: ({size}) => <Check size={size} />,
+    })
   };
 
   return (

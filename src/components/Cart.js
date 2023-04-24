@@ -16,10 +16,17 @@ import { ListItem, ListItemLabel, ARTWORK_SIZES } from "baseui/list";
 import Check from "baseui/icon/check";
 import Delete from "baseui/icon/delete";
 import { ListItem, ListItemLabel } from "baseui/list";
+import {
+  SnackbarProvider,
+  useSnackbar,
+  DURATION,
+} from 'baseui/snackbar';
 
 
 const Cart = () => {
   const [css, theme] = useStyletron();
+  const {enqueue} = useSnackbar();
+
 
 
   const cartItems = useSelector((store) => store.cart.items); //Only get what you need, not get all all the store.
@@ -31,6 +38,10 @@ const Cart = () => {
   };
   const handleRemoveItem = (id) => {
     dispatch(removeItem(id));
+    enqueue({
+      message: 'Item removed from cart',
+      startEnhancer: ({size}) => <Check size={size} />,
+    })
   };
 
   const getSubTotal = () => {
@@ -50,8 +61,8 @@ const Cart = () => {
   return (
     <>
     
-    
-      <div className="container-restaurant-menu">
+    <SnackbarProvider>
+    <div className="container-restaurant-menu">
         <div>
           <div
             className={css({
@@ -153,6 +164,8 @@ const Cart = () => {
         </div>
         
       </div>
+    </SnackbarProvider>
+     
     </>
   );
 };

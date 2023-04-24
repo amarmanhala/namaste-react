@@ -18,6 +18,11 @@ import UserContext from "../utils/UserContext";
 import { Provider } from "react-redux";
 import store from "../utils/store";
 import Cart from "./components/Cart";
+import {
+  SnackbarProvider,
+  useSnackbar,
+  DURATION,
+} from 'baseui/snackbar';
 
 //const Instamart = lazy(() => import("./components/Instamart"));
 
@@ -36,7 +41,10 @@ const AppLayout = () => {
             <UserContext.Provider value={user}>
               <Header />
               {/** All the children will go into j the Outlet according to the paths  */}
+              <SnackbarProvider>
               <Outlet />
+              </SnackbarProvider>
+             
               <Footer />
             </UserContext.Provider>
           </Provider>
