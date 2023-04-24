@@ -17,8 +17,10 @@ import Check from "baseui/icon/check";
 import Delete from "baseui/icon/delete";
 import { ListItem, ListItemLabel } from "baseui/list";
 
+
 const Cart = () => {
   const [css, theme] = useStyletron();
+
 
   const cartItems = useSelector((store) => store.cart.items); //Only get what you need, not get all all the store.
   //It may cause the performance issues. Because when store update the ur all components will update
@@ -47,6 +49,8 @@ const Cart = () => {
 
   return (
     <>
+    
+    
       <div className="container-restaurant-menu">
         <div>
           <div
