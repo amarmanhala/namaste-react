@@ -11,8 +11,7 @@ import {
   HeadingMedium,
 } from "baseui/typography";
 import { useStyletron } from "baseui";
-import { StyledDivider, SIZE } from "baseui/divider";
-import { ListItem, ListItemLabel, ARTWORK_SIZES } from "baseui/list";
+import { StyledDivider } from "baseui/divider";
 import Check from "baseui/icon/check";
 import Delete from "baseui/icon/delete";
 import { ListItem, ListItemLabel } from "baseui/list";
@@ -84,7 +83,7 @@ const Cart = () => {
             </Button>
           </div>
 
-          <StyledDivider $size={SIZE.module} />
+          <StyledDivider />
         </div>
 
         <HeadingSmall>Your items</HeadingSmall>

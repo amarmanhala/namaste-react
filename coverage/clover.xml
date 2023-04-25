@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682378619049" clover="3.2.0">
-  <project timestamp="1682378619049" name="All files">
-    <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="2" coveredelements="2" complexity="0" loc="1" ncloc="1" packages="1" files="1" classes="1"/>
-    <file name="sum.js" path="/Users/manhala/design/namaste-react/src/components/sum.js">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="1" count="1" type="stmt"/>
-    </file>
+<coverage generated="1682388592042" clover="3.2.0">
+  <project timestamp="1682388592042" name="All files">
+    <metrics statements="22" coveredstatements="14" conditionals="13" coveredconditionals="4" methods="9" coveredmethods="5" elements="44" coveredelements="23" complexity="0" loc="22" ncloc="22" packages="2" files="5" classes="5"/>
+    <package name="src.components">
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
+      <file name="Header.js" path="/Users/manhala/design/namaste-react/src/components/Header.js">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+      </file>
+      <file name="sum.js" path="/Users/manhala/design/namaste-react/src/components/sum.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="15" coveredstatements="7" conditionals="11" coveredconditionals="3" methods="5" coveredmethods="1"/>
+      <file name="cartSlice.js" path="/Users/manhala/design/namaste-react/utils/cartSlice.js">
+        <metrics statements="7" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+      </file>
+      <file name="getScreenSize.js" path="/Users/manhala/design/namaste-react/utils/getScreenSize.js">
+        <metrics statements="7" coveredstatements="4" conditionals="9" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="15" count="1" type="cond" truecount="1" falsecount="2"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+      </file>
+      <file name="store.js" path="/Users/manhala/design/namaste-react/utils/store.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
