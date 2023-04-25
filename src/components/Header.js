@@ -21,7 +21,7 @@ import { useSelector } from "react-redux";
 const Logo = () => {
   return (
     <div>
-      <div className="logo"></div>
+      <div className="logo" data-testid="logo"></div>
     </div>
   );
 };
