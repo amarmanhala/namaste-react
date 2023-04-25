@@ -15,8 +15,5 @@ test("Logo should load on rendering header", () => {
   );
 
   const logo = header.getAllByTestId("logo");
-  const styles = window.getComputedStyle(logo[0]);
-
-  console.log(styles);
-
+  expect(logo[0].innerHTML).toBe("");
 });
